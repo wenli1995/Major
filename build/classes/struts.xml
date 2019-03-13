@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<constant name="struts.enable.DynamicMethodInvocation" value="true" />
+    <package name="default" namespace="/" extends="struts-default">
+        <action name="manager" class="com.java.action.UserAction">
+            <result name="success">main.jsp</result>
+            <result name="error">login.jsp</result>
+        </action>
+        <action name="aclass" class="com.java.action.MajorAction">
+            <result name="success">main.jsp</result>
+            <result name="save" type="redirectAction">aclass!list</result>
+        </action>
+        <action name="student" class="com.java.action.StudentAction">
+            <result name="success">main.jsp</result>
+            <result name="save" type="redirectAction">student!list</result>
+        </action>
+    </package>
+    <!-- Add packages here -->
+
+</struts>
